@@ -1,7 +1,7 @@
 var express = require('express');
 
 var app = express();
-var PORT = 3000;
+var PORT = process.env.port || 3000; //heroku server EV port to listen to. if local, 3000.
 var middleware = require('./middleware');
 
 app.use(middleware.logger); //application level middleware
